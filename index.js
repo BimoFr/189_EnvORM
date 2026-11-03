@@ -1,7 +1,8 @@
-const path = require('path');
-module.exports = {
-    config: path.resolve('config', 'config.js'),
-    'models-path': path.resolve('models'),
-    'seeders-path': path.resolve('seeders'),
-    'migrations-path': path.resolve('migrations')
-};
+const express = require('express');
+const app = express();
+const PORT = 3000;
+const db = require('./models');
+app.use(express.json());
+app.use(express.urlencoded({ 
+    extended: false 
+}));
